@@ -82,7 +82,7 @@ const CreateLinkForm: NextPage = () => {
             debounce(slugCheck.refetch, 100);
           }}
           minLength={1}
-          placeholder='rothaniel'
+          placeholder='abcd'
           className={slugInput}
           value={form.slug}
           pattern={'^[-a-zA-Z0-9]+$'}
