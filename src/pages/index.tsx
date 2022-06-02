@@ -1,10 +1,17 @@
 import type { NextPage } from 'next';
-import styles from '../styles/Home.module.css';
+import dynamic from 'next/dynamic';
+import { Suspense } from 'react';
+
+const CreateLinkForm = dynamic(() => import('../components/create-link'), {
+  ssr: false,
+});
 
 const Home: NextPage = () => {
   return (
-    <div className={styles.container}>
-      <h1>Hello dev</h1>
+    <div className='flex flex-col justify-center items-center h-screen bg-gray-900 text-white'>
+      <Suspense>
+        <CreateLinkForm />
+      </Suspense>
     </div>
   );
 };
